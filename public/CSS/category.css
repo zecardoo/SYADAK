@@ -1,0 +1,62 @@
+:root {
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+    --card-padding: 1.8rem;
+    --padding: 1.2rem;
+    --box-shadow: 1rem 2rem 3rem var(--color-light);
+}
+
+/* ---------------------- DARK THEME ---------------------- */
+.dark-theme-variables
+{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+main .Card{
+
+    background: var( --color-white);
+    border-radius: var(--border-radius-2);
+    padding: var(--card-padding);
+    box-shadow: var(--box-shadow);
+    width: 60vw;
+}
+
+main .Card h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spinner {
+    width: 4.8px;
+    height: 4.8px;
+    animation: spinner-z355kx 1s infinite linear;
+    border-radius: 4.8px;
+    box-shadow: 12px 0px 0 0 #474bff, 7.4px 9.4px 0 0 #474bff, -2.6px 11.6px 0 0 #474bff, -10.8px 5.2px 0 0 #474bff, -10.8px -5.2px 0 0 #474bff, -2.6px -11.6px 0 0 #474bff, 7.4px -9.4px 0 0 #474bff;
+ }
+
+ @keyframes spinner-z355kx {
+    to {
+       transform: rotate(360deg);
+    }
+ }
+

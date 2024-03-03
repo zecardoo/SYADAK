@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    appearance: none;
+    list-style: none;
+    box-sizing: border-box;
+    /* user-select: none; */
+    scroll-behavior: smooth;
+    font-family: "Helvetica Neue", Helvetica, Arial, "WenQuanYi Zen Hei",
+        "Hiragino Sans GB", "儷黑 Pro", "LiHei Pro", "Heiti TC",
+        "Microsoft JhengHei UI", "Microsoft JhengHei", sans-serif;
+}
+
+html {
+    font-size: 14px;
+}
+
+/* shortcut icon  */
+/* link[rel="icon"]{
+    border-radius: 50%;
+} */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 0.88rem;
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    background: var(--color-background);
+    overflow-x: hidden;
+    /* delete it later and see what happen */
+    color: var(--color-dark);
+}
+
+a {
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 0.87rem;
+}
+
+h4 {
+    font-size: 0.8rem;
+}
+
+h5 {
+    font-size: 0.77rem;
+}
+
+small {
+    font-size: 0.75rem;
+}
+
+.theme-toggler span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms ease;
+}
+
+.theme-toggler span.light_mode {
+    background: rgb(255, 217, 4);
+    color: white;
+
+    border-radius: 50%;
+}
+.theme-toggler span.dark_mode {
+    --tw-bg-opacity: 1;
+    background-color: rgb(49 46 129 / var(--tw-bg-opacity));
+    color: white;
+
+    border-radius: 50%;
+}
+.sales {
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: sales 2s linear forwards;
+}
+
+@keyframes sales {
+    100% {
+        stroke-dashoffset: 38;
+    }
+}
+
+.expenses {
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: expenses 2s linear forwards;
+}
+
+@keyframes expenses {
+    100% {
+        stroke-dashoffset: 88;
+    }
+}
+
+.incomes {
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: incomes 2s linear forwards;
+}
+
+@keyframes incomes {
+    100% {
+        stroke-dashoffset: 112;
+    }
+}
+
+/* Swiper Start */
+
+/* End */
+@layer components {
+    .sidera {
+        @apply flex items-center relative gap-6  text-white ml-8 h-16 w-44 hover:text-red-700 hover:ml-4 transition-all duration-300 ease-in-out;
+    }
+    .sidera h3 {
+        @apply text-lg;
+    }
+    .sidera.active {
+        @apply bg-slate-50 text-red-500 ml-0 h-14 w-full before:content-[''] before:w-2 before:h-full before:bg-red-600 transition-all duration-300 ease-in-out dark:bg-slate-800;
+    }
+
+    .last-child {
+        @apply last:absolute last:bottom-0 last:w-full;
+    }
+
+    .card {
+        @apply flex items-center justify-between bg-white shadow-md drop-shadow-md w-[30%] h-full p-4 rounded-2xl transition-all duration-300 ease-in-out dark:bg-slate-700;
+    }
+
+    .icon {
+        @apply text-2xl;
+    }
+
+    /* variables  */
+    .table {
+        @apply  bg-white container mt-4 rounded-xl border-separate border border-solid p-4 text-center text-lg font-semibold  shadow-md drop-shadow-lg transition-all duration-300 ease-in-out dark:bg-slate-700;
+    }
+
+    .table thead tr {
+        @apply h-14   dark:text-white;
+    }
+
+    .table thead th {
+        @apply py-2 border-y-[1px] border-solid;
+    }
+
+    .table tbody td {
+        @apply py-2 border-b-[1px] border-solid text-slate-500;
+    }
+    .table tbody td img {
+        @apply w-16 h-16 m-auto;
+    }
+
+    input {
+        @apply p-2.5 block text-sm font-semibold text-slate-600 rounded-lg ring-2 ring-stone-300 focus:ring-2 focus:ring-blue-400 transition-all duration-300 ease-in-out dark:bg-slate-500 dark:text-white;
+    }
+    input[type="file"] {
+        @apply text-slate-400  cursor-pointer    dark:bg-slate-500 dark:border-gray-600 dark:placeholder-gray-400;
+    }
+
+    select {
+        @apply form-select p-2.5 block text-sm font-semibold text-slate-600 rounded-lg ring-2 ring-stone-300 focus:ring-2 focus:ring-blue-400 transition-all duration-300 ease-in-out dark:bg-slate-500 dark:text-white;
+    }
+
+    /* Modal */
+
+    .modal {
+        @apply block fixed z-50 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50 ;
+    }
+}
