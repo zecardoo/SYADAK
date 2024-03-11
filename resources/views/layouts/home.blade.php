@@ -37,7 +37,7 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-slate-100">
+<body>
     {{-- @include('loading') --}}
     <div id="app" class=" flex flex-col">
 
@@ -117,9 +117,12 @@
         </header>
 
 
-        <main class="pt-20 px-0 max-lg:px-4 container mx-auto">
+        <main class="pt-20 px-0 max-lg:px-4 container mx-auto ">
             @yield('content')
         </main>
+
+
+        
 
 
 

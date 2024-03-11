@@ -6,7 +6,7 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img class="w-full h-full"
-                    src="https://img.freepik.com/free-vector/coming-soon-background-with-focus-light-effect-design_1017-27277.jpg?size=626&ext=jpg&ga=GA1.1.1853597733.1703178981&semt=ais"
+                    src="https://img.freepik.com/free-vector/coming-soon-background-with-focus-liflex flex-col gap-8t-effect-design_1017-27277.jpg?size=626&ext=jpg&ga=GA1.1.1853597733.1703178981&semt=ais"
                     alt="" loading="lazy">
             </div>
 
@@ -18,7 +18,7 @@
 
             <div class="swiper-slide">
                 <img class="w-full h-full"
-                    src="https://img.freepik.com/free-vector/coming-soon-display-background-with-focus-light_1017-33741.jpg?size=626&ext=jpg&ga=GA1.1.1853597733.1703178981&semt=ais"
+                    src="https://img.freepik.com/free-vector/coming-soon-display-background-with-focus-liflex flex-col gap-8t_1017-33741.jpg?size=626&ext=jpg&ga=GA1.1.1853597733.1703178981&semt=ais"
                     alt="" loading="lazy">
             </div>
 
@@ -43,7 +43,8 @@
                     making it
                     extremely difficult for this information to be intercepted.... <a href="#"
                         class="font-bold text-red-400 hover:translate-x-6 ease-in duration-300 flex w-48"><span
-                            class="material-icons-sharp text-green-300">chevron_right</span>Read More</a></p>
+                            class="material-icons-sharp text-green-300"></span>Read More</a>
+                </p>
             </div>
 
             <div class="mb-20 max-lg:hidden">
@@ -56,35 +57,75 @@
     </section>
 
     {{-- Products section --}}
-    <section class="pb-4">
+    <section class="mb-4">
         <h2 class="text-center text-red-400 text-5xl font-semibold pb-8"><span class="text-black">Featured
             </span>Products</h2>
 
-        <div class="h-full py-4 drop-shadow-xl flex flex-wrap justify-center gap-10">
+        <div class="h-full py-4 drop-shadow-xl flex justify-center 2xl:grid 2xl:grid-cols-5 flex-wrap gap-10">
             @foreach ($product as $item)
-                {{-- <div
-                    class="w-80 h-[35rem] ring-1 ring-gray-300 shadow-xl flex flex-col gap-8 rounded-2xl  break-words hover:ring-2 hover:ring-red-400 hover:ease-in-out hover:scale-95 hover:duration-300">
-                    <img class="h-96 rounded-t-xl" src="/storage/{{ $item->img }}" alt="">
-                    <h2 class="font-semibold text-3xl px-6">{{ $item->name }}</h2>
-                    <h3 class="text-2xl font-bold px-6">SAR {{ $item->price }}.00 <span
-                            class="text-gray-400 text-xl pl-9">{{ $item->des }}</span>
-                    </h3>
-                    <addcart-btn user-id='{{ Auth::user()->id ?? 0 }}' product-id='{{ $item->id }}'></addcart-btn> 
-
-                </div> --}}
-
                 <a href="/product-show/{{ $item->id }}">
                     <div
-                        class="w-80 h-[35rem] ring-1 ring-gray-300 shadow-xl flex flex-col gap-8 rounded-2xl  break-words hover:ring-2 hover:ring-red-400 hover:ease-in-out hover:scale-95 hover:duration-300">
-                        <img class="h-96 rounded-t-xl" src="/storage/{{ $item->img }}" alt="" loading="lazy">
-                        <h2 class="font-semibold text-3xl px-6">{{ $item->name }}</h2>
-                        <h3 class="text-2xl font-bold px-6">SAR {{ $item->price }}.00 <span
-                                class="text-gray-400 text-xl pl-9">{{ $item->des }}</span>
-                        </h3>
+                        class="w-72  ring-1 ring-gray-300 shadow-md flex flex-col gap-8 rounded-2xl  break-words hover:ring-2 hover:ring-red-400 hover:ease-in-out hover:scale-95 hover:duration-300">
+
+                        <img class="h-[20rem] rounded-t-xl" src="/storage/{{ $item->img }}" alt=""
+                            loading="lazy">
+
+                        <div class="pb-4 space-y-4">
+                            <h2 class="font-semibold text-3xl px-6">{{ $item->name }}</h2>
+                            <h3 class="text-2xl font-bold px-6 text-red-500">SAR {{ $item->price }}.00 <span
+                                    class="text-gray-400 text-xl pl-9">{{ $item->description }} KG</span>
+                            </h3>
+                        </div>
                     </div>
                 </a>
             @endforeach
         </div>
+    </section>
+
+
+    {{-- Contact us --}}
+    <section class="flex flex-col items-center pt-12 mb-8">
+        <h2 class="text-center text-black text-5xl font-semibold uppercase pb-8"><span class="text-red-400">contact
+            </span>us</h2>
+
+        <form class="flex gap-8 w-full">
+            <div class="p-4 border-[1px] border-gray-400 border-solid rounded-md shadow-md w-2/3">
+                <h3 class="text-4xl uppercase pb-8">get in touch</h3>
+
+                <div class="grid grid-cols-2 gap-8">
+                    <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
+                        type="text" placeholder="Your name">
+                    <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
+                        type="email" placeholder="Your email">
+
+                    <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
+                        type="text" placeholder="Your number">
+                    <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
+                        type="email" placeholder="Your subject">
+
+                </div>
+
+                <div class="grid pt-4">
+                    <textarea class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
+                        placeholder="Your message..." name="" id="" cols="30" rows="10"></textarea>
+                </div>
+
+                <button class="text-white text-xl bg-red-400 py-2 px-20 rounded-md mt-8">Send Message</button>
+
+            </div>
+
+            <div class="p-4 border-[1px] border-gray-400 border-solid rounded-md shadow-md w-full">
+                <iframe class="w-full h-full"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.2242286743694!2d101.70477421408958!3d3.0344264546950246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdcaaab261d805%3A0x404f0a7303b4be92!2sEast%20Lake%20Residence%2C%20Taman%20Serdang%20Perdana%2C%2043300%20Seri%20Kembangan%2C%20Selangor!5e0!3m2!1sen!2smy!4v1653985382933!5m2!1sen!2smy"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+
+
+        </form>
+
+
+
     </section>
 
     {{-- Deal section --}}

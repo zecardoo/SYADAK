@@ -56,7 +56,7 @@ Route::controller(CartController::class)->group(function (){
 
     
 });
-
+ 
 // Category
 Route::controller(CategoryController::class)->group(function () {
     // Route::get('/categoryshow', 'index')->name('category.index');
