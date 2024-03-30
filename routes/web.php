@@ -8,6 +8,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboradController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\SearchController;
 
 
@@ -43,10 +44,10 @@ Route::controller(DashboradController::class)->group(function (){
    Route::get('/dashborad', 'dashborad')->name('dashborad');
    Route::get('/category', 'category')->name('category');
    Route::get('/product', 'product')->name('product');
-   Route::get('/users', 'users')->name('users');
+   Route::get('/user', 'users')->name('users');
+   Route::get('/message', 'message')->name('message');
 
 });
-
 // Cart
 Route::controller(CartController::class)->group(function (){
     Route::get('/cart-show', 'show')->name('cart-show');
@@ -83,4 +84,8 @@ Route::controller(ProfileController::class)->group(function () {
     Route::patch('/profile/edit/{user}', 'edit')->name('profile.edit');
     Route::patch('/profile/user/edit/{user}', 'userProfile')->name('profile-user');
     Route::delete('/delete/{user}', 'destroy')->name('profile.destroy');
+});
+
+Route::controller(MessageController::class)->group(function () {
+   Route::post('/contact/p', 'store')->name('message.post'); 
 });

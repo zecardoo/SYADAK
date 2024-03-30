@@ -82,7 +82,7 @@
                         </a>
                     </li>
                     <li class="last-child">
-                        <a href="#" id="btnMessages" class="sidera {{ $active_messages ?? '' }}">
+                        <a href="{{ route('message') }}" id="btnMessages" class="sidera {{ $active_messages ?? '' }}">
                             <i class="fa-solid fa-envelope icon"></i>
                             <h3>Messages</h3>
                         </a>

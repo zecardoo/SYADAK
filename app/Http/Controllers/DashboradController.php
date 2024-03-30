@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Order;
+use App\Models\Message;
+
 
 class DashboradController extends Controller
 {
@@ -132,4 +134,11 @@ class DashboradController extends Controller
             $this->authorize('admin', $user);
         }
     }
+
+    public function message () {
+        
+        $message = Message::all();
+        return view('admin.message', compact('message'));
+    }
+    
 }

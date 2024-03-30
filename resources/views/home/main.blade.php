@@ -72,9 +72,10 @@
 
                         <div class="pb-4 space-y-4">
                             <h2 class="font-semibold text-3xl px-6">{{ $item->name }}</h2>
-                            <h3 class="text-2xl font-bold px-6 text-red-500">SAR {{ $item->price }}.00 <span
-                                    class="text-gray-400 text-xl pl-9">{{ $item->description }} KG</span>
-                            </h3>
+                            <div class="flex items-center text-base">
+                                <h3 class="text-2xl font-bold px-6 text-red-500">SAR {{ $item->price }}.00</h3>
+                                <h4 class="text-gray-400 text-xl pl-9">{{ $item->description }} KG</h4>
+                            </div>
                         </div>
                     </div>
                 </a>
@@ -88,26 +89,32 @@
         <h2 class="text-center text-black text-5xl font-semibold uppercase pb-8"><span class="text-red-400">contact
             </span>us</h2>
 
-        <form class="flex gap-8 w-full">
+        <form action="/contact/p" method="POST" class="flex gap-8 w-full">
+            @csrf
             <div class="p-4 border-[1px] border-gray-400 border-solid rounded-md shadow-md w-2/3">
                 <h3 class="text-4xl uppercase pb-8">get in touch</h3>
 
                 <div class="grid grid-cols-2 gap-8">
+                    {{-- name --}}
                     <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
-                        type="text" placeholder="Your name">
+                        type="text" placeholder="Your name"  name="name" required >
+                    {{-- email --}}
                     <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
-                        type="email" placeholder="Your email">
+                        type="email" placeholder="Your email" name="email" required>
 
+                    {{-- number --}}
                     <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
-                        type="text" placeholder="Your number">
+                        type="tel" pattern="[0-9]{10}" size="10" maxlength="10" placeholder="050-584-2259" name="number" required>
+
+                    {{-- subject --}}
                     <input class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
-                        type="email" placeholder="Your subject">
+                        type="text" placeholder="Your subject" name="subject" required>
 
                 </div>
 
                 <div class="grid pt-4">
                     <textarea class="p-4 placeholder:text-2xl placeholder:text-gray-500 font-thin text-2xl text-gray-500"
-                        placeholder="Your message..." name="" id="" cols="30" rows="10"></textarea>
+                        placeholder="Your message..." name="message" cols="30" rows="10" required></textarea>
                 </div>
 
                 <button class="text-white text-xl bg-red-400 py-2 px-20 rounded-md mt-8">Send Message</button>

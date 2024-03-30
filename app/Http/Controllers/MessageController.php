@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class MessageController extends Controller
 {
+
+    
+
     /**
      * Display a listing of the resource.
      */
@@ -14,6 +18,7 @@ class MessageController extends Controller
     {
         //
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -28,7 +33,19 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'name' => 'required',
+            'email'=> 'required',
+            'number'=> 'required',
+            'subject'=> 'required',
+            'message'=> 'required'
+        ]);
+
+        Message::create($data);
+
+        return redirect('/');
+
+        
     }
 
     /**
