@@ -24,11 +24,14 @@
                         <td>{{ $message->subject }}</td>
                         <td class="break-words">{{ $message->message }}</td>
                         <td>
-                            <div>
-                                <button class="text-3xl text-red-400"><i class="fa-solid fa-pen-to-square"></i></button>
-                            </div>
+                            <form action="/message/delete/{{ $message->id }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-3xl text-red-400"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                            
                         </td>
-
+                
                     </tr>
                 @endforeach
             </tbody>

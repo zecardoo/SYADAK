@@ -85,7 +85,8 @@ Route::controller(ProfileController::class)->group(function () {
     Route::patch('/profile/user/edit/{user}', 'userProfile')->name('profile-user');
     Route::delete('/delete/{user}', 'destroy')->name('profile.destroy');
 });
-
+// message
 Route::controller(MessageController::class)->group(function () {
    Route::post('/contact/p', 'store')->name('message.post'); 
+   Route::delete('/message/delete/{message}', 'destroy');
 });
